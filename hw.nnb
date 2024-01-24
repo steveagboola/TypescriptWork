@@ -1,0 +1,223 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "<a id=\"hw\"></a>\n\n# Homework"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Create a type to represent the following instances of `CTStudent` Also declare three 3 students below as type `CTStudent` and set their values\n\n```\nlet student1 = {\n    id: 'GMK435&g62L00',\n    name: 'John Smith',\n    age: 24,\n    isTired: true,\n    projectsCompleted:[\"HTML Portfolio\", \"Fakebook\", \"Pokemon API Project\", \"Weather Bug\"],\n    pet: 'dog'\n}\n\nlet student2= {\n    id: '6KGS%54GmlY76',\n    name: 'Jenny Hawthorne',\n    age: 28,\n    isTired: false,\n    projectsCompleted:[\"HTML Portfolio\"],\n}\n\nlet student3 = {\n    id: '6KGS%54GmlY76',\n    name: 'Neo',\n    age: 57,\n    isTired: true,\n    projectsCompleted:[\"Matrix\",\"Biological Interface Program\"],\n    pet:'cat'\n}\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Answer\n\ntype CTStudent = {\n    id: string,\n    name: string,\n    age: number,\n    isTired:boolean,\n    projectsCompleted:string[],\n    pet?: string\n}\n\n\nlet student1: CTStudent = {\n    id: 'GMK435&g62L00',\n    name: 'John Smith',\n    age: 24,\n    isTired: true,\n    projectsCompleted:[\"HTML Portfolio\", \"Fakebook\", \"Pokemon API Project\", \"Weather Bug\"],\n    pet: 'dog'\n}\n\nlet student2: CTStudent = {\n    id: '6KGS%54GmlY76',\n    name: 'Jenny Hawthorne',\n    age: 28,\n    isTired: false,\n    projectsCompleted:[\"HTML Portfolio\"],\n}\n\nlet student3: CTStudent = {\n    id: '6KGS%54GmlY76',\n    name: 'Neo',\n    age: 57,\n    isTired: true,\n    projectsCompleted:[\"Matrix\",\"Biological Interface Program\"],\n    pet:'cat'\n}\nconsole.log(student1)\nconsole.log(student2)\nconsole.log(student3)\nconsole.table(student3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{",
+                                "  id: 'GMK435&g62L00',",
+                                "  name: 'John Smith',",
+                                "  age: 24,",
+                                "  isTired: true,",
+                                "  projectsCompleted: [",
+                                "    'HTML Portfolio',",
+                                "    'Fakebook',",
+                                "    'Pokemon API Project',",
+                                "    'Weather Bug'",
+                                "  ],",
+                                "  pet: 'dog'",
+                                "}",
+                                "{",
+                                "  id: '6KGS%54GmlY76',",
+                                "  name: 'Jenny Hawthorne',",
+                                "  age: 28,",
+                                "  isTired: false,",
+                                "  projectsCompleted: [ 'HTML Portfolio' ]",
+                                "}",
+                                "{",
+                                "  id: '6KGS%54GmlY76',",
+                                "  name: 'Neo',",
+                                "  age: 57,",
+                                "  isTired: true,",
+                                "  projectsCompleted: [ 'Matrix', 'Biological Interface Program' ],",
+                                "  pet: 'cat'",
+                                "}",
+                                "┌───────────────────┬──────────┬────────────────────────────────┬─────────────────┐",
+                                "│      (index)      │    0     │               1                │     Values      │",
+                                "├───────────────────┼──────────┼────────────────────────────────┼─────────────────┤",
+                                "│        id         │          │                                │ '6KGS%54GmlY76' │",
+                                "│       name        │          │                                │      'Neo'      │",
+                                "│        age        │          │                                │       57        │",
+                                "│      isTired      │          │                                │      true       │",
+                                "│ projectsCompleted │ 'Matrix' │ 'Biological Interface Program' │                 │",
+                                "│        pet        │          │                                │      'cat'      │",
+                                "└───────────────────┴──────────┴────────────────────────────────┴─────────────────┘",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Write a function that will accept a an object of type `Fruit`, the object of type Fruit could also be `null`.  If their is a Fruit print the color of the fruit, otherwise print `You ate my fruit already` be sure to annoate the return type of the function"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Given\ntype Fruit={\n    color:string,\n    shape:string\n}\n\nlet apple:Fruit={\n    color:\"red\", \n    shape:\"sphere\"\n}\n\nlet eaten:null=null\n\n//Answer\nfunction aboutFruit(fruit:Fruit | null): void {\n    if(fruit === null){\n        console.log(\"You ate my fruit\");\n    }else{\n        console.log(`The color of the fruit is ${fruit.color}`)\n    }\n}\n\naboutFruit(apple)\naboutFruit(eaten)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "The color of the fruit is red",
+                                "You ate my fruit",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #3"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Create a Union Type named `Ebook` for `Book` and `DigitalBook` and create one instance of the new union type"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Given \ntype Book={\n    isbn:string,\n    title:string,\n    author:string\n}\n\ntype DigitalBook={\n    fileType:string,\n}\n\n//Answer\ntype Ebook = (Book | DigitalBook);\n\nlet myBook: Ebook = {\n    isbn: \"403409\",\n    title: \"This is the title\",\n    author: \"This is the Author\",\n    fileType: \"This is the fileType\"\n}\n\nconsole.table(myBook)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "┌──────────┬────────────────────────┐",
+                                "│ (index)  │         Values         │",
+                                "├──────────┼────────────────────────┤",
+                                "│   isbn   │        '403409'        │",
+                                "│  title   │  'This is the title'   │",
+                                "│  author  │  'This is the Author'  │",
+                                "│ fileType │ 'This is the fileType' │",
+                                "└──────────┴────────────────────────┘",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Create a Type to represent a `ShopItem` that will fit the following rules. You may need to create additional structures\n\n- All ShopItems have an numeric id that can not be edited \n- All ShopItems have a price\n- All ShopItems have a description\n- Some ShopItems have a color\n- All ShopItems have a Category represented with an enum \n    - Possible Categories are `Shirts` `Shoes` `Pants` `Hats`\n- All ShopItems have a list of keywords used to help search for the ShopItem \n    - For Example A Ironman Tshirt may have keywords = [\"Marvel\", \"Endgame\", \"Ironman\",\"Character Tees\", \"Tony Stark\"]\n\nAfter Creating the `ShopItem` type create 3 items using this type"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "enum Category {\n    Shirts,\n    Shoes,\n    Pants,\n    Hats\n}\n\ntype ShopItem = {\n    readonly id: number;\n    price: number;\n    description: string;\n    color?: string; // This is optional\n    category: Category;\n    keywords: string[];\n};\n\nlet item1: ShopItem = {\n    id: 101,\n    price: 29.99,\n    description: \"Ironman T-shirt\",\n    color: \"red\",\n    category: Category.Shirts,\n    keywords: [\"Marvel\", \"Endgame\", \"Ironman\", \"Character Tees\", \"Tony Stark\"]\n};\n\nlet item2: ShopItem = {\n    id: 102,\n    price: 50.00,\n    description: \"Running Shoes\",\n    category: Category.Shoes,\n    keywords: [\"Running\", \"Sports\", \"Athletic\"]\n};\n\nlet item3: ShopItem = {\n    id: 103,\n    price: 35.00,\n    description: \"Baseball Cap\",\n    color: \"blue\",\n    category: Category.Hats,\n    keywords: [\"Baseball\", \"Cap\", \"Sports\"]\n};\n\nconsole.table(item1)\nconsole.table(item2)\nconsole.table(item3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "┌─────────────┬──────────┬───────────┬───────────┬──────────────────┬──────────────┬───────────────────┐",
+                                "│   (index)   │    0     │     1     │     2     │        3         │      4       │      Values       │",
+                                "├─────────────┼──────────┼───────────┼───────────┼──────────────────┼──────────────┼───────────────────┤",
+                                "│     id      │          │           │           │                  │              │        101        │",
+                                "│    price    │          │           │           │                  │              │       29.99       │",
+                                "│ description │          │           │           │                  │              │ 'Ironman T-shirt' │",
+                                "│    color    │          │           │           │                  │              │       'red'       │",
+                                "│  category   │          │           │           │                  │              │         0         │",
+                                "│  keywords   │ 'Marvel' │ 'Endgame' │ 'Ironman' │ 'Character Tees' │ 'Tony Stark' │                   │",
+                                "└─────────────┴──────────┴───────────┴───────────┴──────────────────┴──────────────┴───────────────────┘",
+                                "┌─────────────┬───────────┬──────────┬────────────┬─────────────────┐",
+                                "│   (index)   │     0     │    1     │     2      │     Values      │",
+                                "├─────────────┼───────────┼──────────┼────────────┼─────────────────┤",
+                                "│     id      │           │          │            │       102       │",
+                                "│    price    │           │          │            │       50        │",
+                                "│ description │           │          │            │ 'Running Shoes' │",
+                                "│  category   │           │          │            │        1        │",
+                                "│  keywords   │ 'Running' │ 'Sports' │ 'Athletic' │                 │",
+                                "└─────────────┴───────────┴──────────┴────────────┴─────────────────┘",
+                                "┌─────────────┬────────────┬───────┬──────────┬────────────────┐",
+                                "│   (index)   │     0      │   1   │    2     │     Values     │",
+                                "├─────────────┼────────────┼───────┼──────────┼────────────────┤",
+                                "│     id      │            │       │          │      103       │",
+                                "│    price    │            │       │          │       35       │",
+                                "│ description │            │       │          │ 'Baseball Cap' │",
+                                "│    color    │            │       │          │     'blue'     │",
+                                "│  category   │            │       │          │       3        │",
+                                "│  keywords   │ 'Baseball' │ 'Cap' │ 'Sports' │                │",
+                                "└─────────────┴────────────┴───────┴──────────┴────────────────┘",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
